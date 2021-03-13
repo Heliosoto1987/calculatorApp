@@ -1,11 +1,21 @@
 export const fahrenheitToCelsius = (unit) => {
-    const fahrenheitToC = (unit - 32) * 5/9 
-    return fahrenheitToC.toFixed(1);
+    let fahrenheitToC; 
+    if(unit === ''){
+    fahrenheitToC = 'No values'
+    }else{
+    fahrenheitToC = ((unit - 32) * 5/9 ).toFixed(1);
+    }
+    return fahrenheitToC
 } 
 
 export const celsiusToFahrenheit = (unit) => {
-    const celsiusToF = (unit * 9/5) + 32 
-    return celsiusToF.toFixed(1);
+    let celsiusToF;
+    if(unit === ''){
+    celsiusToF = 'No values'
+    }else{
+    celsiusToF = ((unit * 9/5) + 32).toFixed(1);
+    }
+    return celsiusToF
   }
   
 

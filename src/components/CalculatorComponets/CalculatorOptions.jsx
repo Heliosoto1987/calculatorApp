@@ -1,7 +1,6 @@
 //vendor
 import React from 'react'
-//styles
-import '../../styles/options.scss'
+
 const temperature1 = 'celsius'
 const temperature2 = 'fahrenheits'
 

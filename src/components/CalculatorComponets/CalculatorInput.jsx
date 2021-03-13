@@ -1,10 +1,10 @@
 //vendor
 import React from 'react';
 
-export const CalculatorInput = ({ counter, handLeInputChange, setCounter }) => {
+export const CalculatorInput = ({ inputState, handLeInputChange }) => {
     return (
         <input
-            value={ counter }
+            value={ inputState }
             type="text"
             onChange={ handLeInputChange }
         >
