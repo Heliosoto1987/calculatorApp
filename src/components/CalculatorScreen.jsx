@@ -28,7 +28,7 @@ export const CalculatorScreen = () => {
 
   useEffect(() => {
     if(result === 'NaN'){
-      setResult('Cannot be calculated')
+      setResult('Cannot be calculated');
     }
   }, [result]);
 
