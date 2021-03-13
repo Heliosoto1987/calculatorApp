@@ -2,7 +2,6 @@
 import React from 'react';
 
 export const CalculatorButtons = ({ valueNumber, handLeButtonPress }) => {
- 
   return (
       <button 
       onClick={ handLeButtonPress }

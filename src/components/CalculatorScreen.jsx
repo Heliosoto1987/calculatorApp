@@ -5,37 +5,46 @@ import { CalculatorInput } from './CalculatorComponets/CalculatorInput';
 import { CalculatorButtons } from './CalculatorComponets/CalculatorButtons';
 import { CalculatorOptions } from './CalculatorComponets/CalculatorOptions';
 //utils
-import { celsiusToFahrenheit, fahrenheitToCelsius } from '../funtions/utils'
+import { celsiusToFahrenheit, fahrenheitToCelsius } from '../utils/utils'
 //styles
 import '../styles/calculatorScreen.scss';
+//globalVariables
+import { typesOfTemperatures } from './globalVariables/typesOfTemperatures';
+
+
 
 const arrayButtons = [1,2,3,4,5,6,7,8,9,0];
 
 export const CalculatorScreen = () => {
-  const [inputState, setInputState] = useState(0);
-  const [initialTemp, setInitialTemp] = useState('celsius');
-  const [result, setResult] = useState(0)
+  const {temperature1} = typesOfTemperatures
+  const [inputState, setInputState] = useState('');
+  const [initialTemp, setInitialTemp] = useState(temperature1);
+  const [result, setResult] = useState(0);
 
   useEffect(() => {
-    if (initialTemp === 'celsius' ){
-    setResult(celsiusToFahrenheit( inputState ))
-    }else{
-    setResult(fahrenheitToCelsius( inputState ))
-    }
-  }, [initialTemp, inputState])
+  if (initialTemp === temperature1 ){
+  setResult(celsiusToFahrenheit( inputState ));
+  }else{
+  setResult(fahrenheitToCelsius( inputState ));
+  }
+  }, [initialTemp, inputState, temperature1]);
 
-    const handLeButtonPress = ({ target }) => {
-      setInputState(inputState + target.value)
-    }
-    const handLeOptionsChange = ({ target }) => {
-      setInitialTemp(target.value)
-    }
-    const handLeInputChange = ({ target }) => {
-      setInputState((target.value));
-    }
+  useEffect(() => {
     if(result === 'NaN'){
-      setResult('cannot be calculated')
+      setResult('Cannot be calculated')
     }
+  }, [result]);
+
+  const handLeButtonPress = ({ target }) => {
+    setInputState(inputState + target.value);
+  }
+  const handLeOptionsChange = ({ target }) => {
+    setInitialTemp(target.value);
+  }
+  const handLeInputChange = ({ target }) => {
+    setInputState((target.value));
+  }
+
   return (
     <main className="calculator">
       <div className="calculator__container">
@@ -52,7 +61,7 @@ export const CalculatorScreen = () => {
             <div className="calculatorPrint__result">{ result }</div>
           </div>
             <div className="container__buttons">
-              {   
+              {
               arrayButtons.map( i => 
               <CalculatorButtons
               handLeButtonPress={ handLeButtonPress } 
@@ -60,7 +69,11 @@ export const CalculatorScreen = () => {
               key={ i + 0} />)
               //using index to place the key as these sticks will be static //
               }
+            <CalculatorButtons
+            handLeButtonPress={() => setInputState(0)}
+            valueNumber={ 'Reset' } />
             </div>
+          
       </div>
     </main>
   )
