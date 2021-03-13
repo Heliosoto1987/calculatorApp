@@ -64,7 +64,7 @@ export const CalculatorScreen = () => {
             />
           ))}
           <CalculatorButtons
-            handleButtonPress={() => setInputState(0)}
+            handleButtonPress={() => setInputState("")}
             value={"C"}
           />
           <CalculatorButtons
