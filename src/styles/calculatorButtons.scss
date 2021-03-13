@@ -1,7 +1,13 @@
-.calculatorButtons{
-    font-weight: bold;
+.calculatorButtons {
+  font-weight: bold;
 }
 
-.calculatorButtons:last-child{
-    color: red;
+.calculatorButtons:nth-child(11) {
+  color: red;
+}
+.calculatorButtons:nth-child(12) {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

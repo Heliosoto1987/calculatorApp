@@ -1,23 +1,22 @@
 //vendor
-import React from 'react';
+import React from "react";
 //styles
-import '../../styles/calculatorButtons.scss'
+import "../../styles/calculatorButtons.scss";
 //propTypes
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-export const CalculatorButtons = ({ value, handLeButtonPress }) => {
+export const CalculatorButtons = ({ value, handleButtonPress }) => {
   return (
-      <button 
+    <button
       className="calculatorButtons"
-      onClick={ handLeButtonPress }
-      value={ value }
-      > 
-      { value }
-      </button>
-  )
-}
+      onClick={handleButtonPress}
+      value={value}
+    >
+      {value}
+    </button>
+  );
+};
 
 CalculatorButtons.propTypes = {
-  handLeButtonPress: PropTypes.func.isRequired,
-}
-
+  handleButtonPress: PropTypes.func.isRequired,
+};
