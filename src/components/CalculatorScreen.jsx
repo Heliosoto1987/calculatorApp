@@ -9,14 +9,11 @@ import { celsiusToFahrenheit, fahrenheitToCelsius } from '../utils/utils'
 //styles
 import '../styles/calculatorScreen.scss';
 //globalVariables
-import { typesOfTemperatures } from './globalVariables/typesOfTemperatures';
-
-
-
+import { typesOfTemperatures } from '../globalVariables/typesOfTemperatures';
 const arrayButtons = [1,2,3,4,5,6,7,8,9,0];
 
 export const CalculatorScreen = () => {
-  const {temperature1} = typesOfTemperatures
+  const {temperature1} = typesOfTemperatures;
   const [inputState, setInputState] = useState('');
   const [initialTemp, setInitialTemp] = useState(temperature1);
   const [result, setResult] = useState(0);
@@ -48,32 +45,30 @@ export const CalculatorScreen = () => {
   return (
     <main className="calculator">
       <div className="calculator__container">
-        <h1 className="container__title">Temperature Calculator App</h1>  
-          <div className="container__size">
-            <CalculatorInput
-              inputState={ inputState }
-              setInputState={ setInputState }
-              handLeInputChange={ handLeInputChange }
-            />
-            <CalculatorOptions
-            handLeOptionsChange={ handLeOptionsChange }
-            />
-            <div className="calculatorPrint__result">{ result }</div>
-          </div>
-            <div className="container__buttons">
-              {
-              arrayButtons.map( i => 
-              <CalculatorButtons
-              handLeButtonPress={ handLeButtonPress } 
-              valueNumber={ i + 0 }
-              key={ i + 0} />)
-              //using index to place the key as these sticks will be static //
-              }
-            <CalculatorButtons
-            handLeButtonPress={() => setInputState(0)}
-            valueNumber={ 'Reset' } />
-            </div>
-          
+      <h2 className="container__title">Temperature Calculator App</h2>  
+        <div className="container__size">
+        <CalculatorInput
+        inputState={ inputState }
+        setInputState={ setInputState }
+        handLeInputChange={ handLeInputChange }
+        />
+        <CalculatorOptions
+        handLeOptionsChange={ handLeOptionsChange }
+        />
+        <div className="calculatorPrint__result">{ result }</div>
+        </div>
+        <div className="container__buttons">
+        {
+        arrayButtons.map( i => 
+        <CalculatorButtons
+        handLeButtonPress={ handLeButtonPress } 
+        value={ i + 0 }
+        key={ `button${i + 0}` } />)
+        }
+        <CalculatorButtons
+        handLeButtonPress={() => setInputState(0)}
+        value={ 'C' } />
+        </div>
       </div>
     </main>
   )
