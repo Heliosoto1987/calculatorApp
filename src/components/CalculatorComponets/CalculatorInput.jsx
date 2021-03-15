@@ -6,11 +6,11 @@ import PropTypes from "prop-types";
 export const CalculatorInput = ({ inputState, handleInputChange }) => {
   return (
     <input
-      value={inputState}
-      type="text"
-      onChange={handleInputChange}
-      className="calculatorInput"
-    ></input>
+    value={inputState}
+    type="text"
+    onChange={handleInputChange}
+    className="calculatorInput"
+    />
   );
 };
 

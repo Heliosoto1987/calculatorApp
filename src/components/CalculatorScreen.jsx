@@ -32,14 +32,14 @@ export const CalculatorScreen = () => {
     }
   }, [result]);
 
-  const handleButtonPress = ({ target }) => {
-    setInputState(inputState + target.value);
+  const handleButtonPress = ({ target: { value } }) => {
+    setInputState((inputState) => inputState + value);
   };
-  const handleOptionsChange = ({ target }) => {
-    setInitialTemp(target.value);
+  const handleOptionsChange = ({ target: { value } }) => {
+    setInitialTemp(value);
   };
-  const handleInputChange = ({ target }) => {
-    setInputState(target.value);
+  const handleInputChange = ({ target: { value } }) => {
+    setInputState(value);
   };
 
   return (
@@ -56,11 +56,11 @@ export const CalculatorScreen = () => {
           <div className="calculatorPrint__result">{result}</div>
         </div>
         <div className="container__buttons">
-          {arrayButtons.map((i) => (
+          {arrayButtons.map((buttonValue) => (
             <CalculatorButtons
               handleButtonPress={handleButtonPress}
-              value={i + 0}
-              key={`button${i + 0}`}
+              value={buttonValue}
+              key={`button${buttonValue}`}
             />
           ))}
           <CalculatorButtons
