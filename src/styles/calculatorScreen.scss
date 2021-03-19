@@ -6,7 +6,7 @@
 .calculator__container {
   margin-top: 5%;
   box-shadow: black 2px 2px 2px;
-  width: 40vw;
+  width: 20vw;
 }
 
 .container__title {
@@ -23,7 +23,7 @@
 .container__buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  min-height: 25vh;
+  height: 35vh;
 }
 
 .calculatorPrint__result {

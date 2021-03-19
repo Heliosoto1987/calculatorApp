@@ -1,13 +1,8 @@
 .calculatorButtons {
   font-weight: bold;
+  border-radius: 50%;
 }
 
-.calculatorButtons:nth-child(11) {
-  color: red;
-}
 .calculatorButtons:nth-child(12) {
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: red;
 }

@@ -10,7 +10,7 @@ import { celsiusToFahrenheit, fahrenheitToCelsius } from "../utils/utils";
 import "../styles/calculatorScreen.scss";
 //globalVariables
 import { typesOfTemperatures } from "../globalVariables/typesOfTemperatures";
-const arrayButtons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const arrayButtons = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
 
 export const CalculatorScreen = () => {
   const { temperature1 } = typesOfTemperatures;
@@ -64,12 +64,12 @@ export const CalculatorScreen = () => {
             />
           ))}
           <CalculatorButtons
-            handleButtonPress={() => setInputState("")}
-            value={"C"}
-          />
-          <CalculatorButtons
             handleButtonPress={handleButtonPress}
             value={"."}
+          />
+          <CalculatorButtons
+            handleButtonPress={() => setInputState("")}
+            value={"C"}
           />
         </div>
       </div>
